@@ -13,7 +13,7 @@ PROJECT_NAME=lambda-terraform-github-actions
 dir="$(cd "$(dirname "$0")"; pwd)"
 cd "$dir"
 
- { echo 'usage: publish.sh <prod | dev>'; exit 1; } ;
+[[ $1 != 'prod' && $1 != 'dev' ]] && { echo 'usage: publish.sh <prod | dev>'; exit 1; } ;
 
 # root account id
 ACCOUNT_ID=$(aws sts get-caller-identity \
