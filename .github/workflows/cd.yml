@@ -32,7 +32,7 @@ jobs:
     
     - name: Publish on prod
       if: github.ref == 'refs/heads/main'
-      run: chmod 755 ./../publish.sh prod
+      run: sudo chmod 755 ~/Lambda-terraform-GithubAction/publish.sh prod
       
     - name: Publish on dev
       if: github.ref == 'refs/heads/develop'
